@@ -15,6 +15,7 @@ class Server(QMainWindow):
         self.socket = QTcpServer()
         self.des = DesOperate()
         self.key = self.ui.key.text()
+        self.client = None
 
         self.ui.bind.clicked.connect(self.bind)
         self.ui.send.clicked.connect(self.sendMessage)
@@ -44,6 +45,9 @@ class Server(QMainWindow):
         self.ui.log.append("发送原文：%s" % string)
         string = self.des.encry(string, self.key)
         self.ui.log.append("加密密文：%s" % string)
+        if self.client is None:
+            QMessageBox.information(self, "提示", "未建立连接")
+            return
         self.client.write(string.encode())
         self.ui.sendMessage.setPlainText("")
 
