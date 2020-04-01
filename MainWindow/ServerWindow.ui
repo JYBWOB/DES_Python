@@ -25,7 +25,7 @@
      <rect>
       <x>20</x>
       <y>350</y>
-      <width>531</width>
+      <width>521</width>
       <height>121</height>
      </rect>
     </property>
@@ -33,8 +33,8 @@
    <widget class="QPushButton" name="send">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>390</y>
+      <x>560</x>
+      <y>430</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -118,6 +118,32 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLineEdit" name="clientid">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>390</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>350</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>发给用户</string>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
