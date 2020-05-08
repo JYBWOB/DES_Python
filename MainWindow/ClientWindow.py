@@ -2,16 +2,18 @@
 
 # Form implementation generated from reading ui file 'ClientWindow.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(680, 544)
+        MainWindow.resize(676, 544)
         font = QtGui.QFont()
         font.setFamily("Arial")
         font.setPointSize(14)
@@ -25,7 +27,7 @@ class Ui_MainWindow(object):
         self.send.setGeometry(QtCore.QRect(550, 430, 81, 41))
         self.send.setObjectName("send")
         self.log = QtWidgets.QTextEdit(self.centralwidget)
-        self.log.setGeometry(QtCore.QRect(30, 110, 611, 271))
+        self.log.setGeometry(QtCore.QRect(30, 70, 611, 311))
         self.log.setObjectName("log")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(30, 20, 601, 37))
@@ -48,21 +50,6 @@ class Ui_MainWindow(object):
         self.connect = QtWidgets.QPushButton(self.layoutWidget)
         self.connect.setObjectName("connect")
         self.horizontalLayout.addWidget(self.connect)
-        self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(31, 70, 321, 37))
-        self.widget.setObjectName("widget")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.label_3 = QtWidgets.QLabel(self.widget)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_2.addWidget(self.label_3)
-        self.key = QtWidgets.QLineEdit(self.widget)
-        self.key.setObjectName("key")
-        self.horizontalLayout_2.addWidget(self.key)
-        self.setKey = QtWidgets.QPushButton(self.widget)
-        self.setKey.setObjectName("setKey")
-        self.horizontalLayout_2.addWidget(self.setKey)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -80,7 +67,3 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "服务端Port:"))
         self.port.setText(_translate("MainWindow", "8888"))
         self.connect.setText(_translate("MainWindow", "连接"))
-        self.label_3.setText(_translate("MainWindow", "密钥："))
-        self.key.setText(_translate("MainWindow", "abcdefgh"))
-        self.setKey.setText(_translate("MainWindow", "确定"))
-

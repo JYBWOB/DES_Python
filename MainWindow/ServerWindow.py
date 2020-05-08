@@ -2,11 +2,13 @@
 
 # Form implementation generated from reading ui file 'ServerWindow.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.14.1
 #
 # WARNING! All changes made in this file will be lost!
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -42,21 +44,6 @@ class Ui_MainWindow(object):
         self.bind = QtWidgets.QPushButton(self.layoutWidget)
         self.bind.setObjectName("bind")
         self.horizontalLayout.addWidget(self.bind)
-        self.layoutWidget1 = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget1.setGeometry(QtCore.QRect(340, 20, 321, 37))
-        self.layoutWidget1.setObjectName("layoutWidget1")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.layoutWidget1)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.label_3 = QtWidgets.QLabel(self.layoutWidget1)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_2.addWidget(self.label_3)
-        self.key = QtWidgets.QLineEdit(self.layoutWidget1)
-        self.key.setObjectName("key")
-        self.horizontalLayout_2.addWidget(self.key)
-        self.setKey = QtWidgets.QPushButton(self.layoutWidget1)
-        self.setKey.setObjectName("setKey")
-        self.horizontalLayout_2.addWidget(self.setKey)
         self.clientid = QtWidgets.QLineEdit(self.centralwidget)
         self.clientid.setGeometry(QtCore.QRect(550, 390, 101, 31))
         self.clientid.setObjectName("clientid")
@@ -78,9 +65,5 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "监听端口:"))
         self.port.setText(_translate("MainWindow", "8888"))
         self.bind.setText(_translate("MainWindow", "监听"))
-        self.label_3.setText(_translate("MainWindow", "密钥："))
-        self.key.setText(_translate("MainWindow", "abcdefgh"))
-        self.setKey.setText(_translate("MainWindow", "确定"))
         self.clientid.setText(_translate("MainWindow", "0"))
         self.label.setText(_translate("MainWindow", "发给用户"))
-
