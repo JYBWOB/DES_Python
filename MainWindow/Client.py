@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtNetwork import QTcpSocket
 from PyQt5.QtCore import *
 from DES.DesOperate import DesOperate
+from RSA.RSA import *
 import sys
 
 
@@ -21,6 +22,8 @@ class Client(QMainWindow):
         self.ui.setKey.clicked.connect(self.setKey)
         self.show()
 
+        self.keyReady = False
+
     def setKey(self):
         self.key = self.ui.key.text()
         self.ui.log.append("设置密钥为：%s" % self.key)
@@ -36,6 +39,17 @@ class Client(QMainWindow):
 
     def on_socket_receive(self):
         rxData = str(self.socket.readAll(), 'utf-8')
+        if not self.keyReady:
+            QMessageBox.information(self, "提示", "接收公钥成功" + rxData)
+            slist = rxData.split('_')
+            E = int(slist[0])
+            N = int(slist[1])
+            QMessageBox.information(self, "提示", "E:%d, N:%d" % (E, N))
+            text = encodeRSA(self.key, E, N)
+            self.socket.write(text.encode())
+            self.keyReady = True
+            return
+
         self.ui.log.append("收到密文：%s" % rxData)
         solvedata = self.des.decry(rxData, self.key)
         self.ui.log.append("解密原文：%s" % solvedata)
