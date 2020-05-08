@@ -31,7 +31,7 @@ class RSA:
                 break
             self.D += 1
 
-        print("E:", self.E, "D:", self.D)
+        # print("E:", self.E, "D:", self.D)
         return self.D, self.E
 
 
@@ -41,12 +41,12 @@ class RSA:
         while self.q == self.p:
             self.q = self.prime_num_list[random.randint(0, len(self.prime_num_list) - 1)]
         self.N = self.p * self.q
-        print("p:", self.p, "q:", self.q, "N:", self.N)
+        # print("p:", self.p, "q:", self.q, "N:", self.N)
         return self.p, self.q, self.N
 
     def calculate_eulerN(self):
         self.eulerN = self.euler(self.N)
-        print("Euluer N:", self.eulerN)
+        # print("Euluer N:", self.eulerN)
 
     def euler(self, N):
         res = N
@@ -68,7 +68,7 @@ class RSA:
                     flag = False
             if flag:
                 self.prime_num_list.append(i)
-        print("prime_num_list：", self.prime_num_list)
+        # print("prime_num_list：", self.prime_num_list)
 
 def get_EDN():
     rsa = RSA()

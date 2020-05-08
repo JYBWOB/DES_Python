@@ -46,7 +46,7 @@ class Server(QMainWindow):
             if rxData != "":
                 if self.key[index] is None:
                     self.key[index] = decodeRSA(rxData, self.D, self.N)
-                    self.ui.log.append("第%d个客户端互通密钥成功" % index)
+                    self.ui.log.append("通过RSA获取到第%d个客户端密钥" % index)
                     return
 
                 self.ui.log.append("收到第%d个客户端消息" % index)
@@ -74,7 +74,7 @@ class Server(QMainWindow):
         self.client[-1].disconnected.connect(self.on_socket_disconnected)
 
         sendmessage = str(self.E) + '_' + str(self.N)
-        QMessageBox.information(self, "提示", "发送公钥成功" + sendmessage)
+        self.ui.log.append("发送公钥成功！")
         self.client[-1].write(sendmessage.encode())
         
     def on_socket_disconnected(self):

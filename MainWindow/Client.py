@@ -40,13 +40,14 @@ class Client(QMainWindow):
     def on_socket_receive(self):
         rxData = str(self.socket.readAll(), 'utf-8')
         if not self.keyReady:
-            QMessageBox.information(self, "提示", "接收公钥成功" + rxData)
+            # QMessageBox.information(self, "提示", "接收公钥成功" + rxData)
             slist = rxData.split('_')
             E = int(slist[0])
             N = int(slist[1])
-            QMessageBox.information(self, "提示", "E:%d, N:%d" % (E, N))
+            self.ui.log.append("收到公钥：E:%d, N:%d" % (E, N))
             text = encodeRSA(self.key, E, N)
             self.socket.write(text.encode())
+            self.ui.log.append("已通过RSA发送DES密钥")
             self.keyReady = True
             return
 
