@@ -28,11 +28,6 @@ class Server(QMainWindow):
         
         self.show()
 
-    def setKey(self):
-        self.key = self.ui.key.text()
-        self.ui.log.append("设置密钥为：%s" % self.key)
-        QMessageBox.information(self, "提示", "设置成功")
-
     def bind(self):
         self.bindport = int(self.ui.port.text())
         self.socket.listen(QHostAddress.LocalHost,self.bindport)
