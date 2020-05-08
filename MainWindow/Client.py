@@ -19,15 +19,9 @@ class Client(QMainWindow):
 
         self.ui.connect.clicked.connect(self.Connect)
         self.ui.send.clicked.connect(self.sendMessage)
-        self.ui.setKey.clicked.connect(self.setKey)
         self.show()
 
         self.keyReady = False
-
-    def setKey(self):
-        self.key = self.ui.key.text()
-        self.ui.log.append("设置密钥为：%s" % self.key)
-        QMessageBox.information(self, "提示", "设置成功")
 
     def Connect(self):
         self.serverhost = self.ui.host.text()
