@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtNetwork import QTcpServer, QHostAddress
 from PyQt5.QtCore import *
 from DES.DesOperate import DesOperate
+from RSA.RSA import *
 import sys
 
 
@@ -12,10 +13,12 @@ class Server(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+
         self.socket = QTcpServer()
         self.des = DesOperate()
         self.key = self.ui.key.text()
         self.client = []
+
 
         self.ui.bind.clicked.connect(self.bind)
         self.ui.send.clicked.connect(self.sendMessage)
