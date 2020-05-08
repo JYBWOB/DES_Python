@@ -24,8 +24,7 @@ class Server(QMainWindow):
 
         self.ui.bind.clicked.connect(self.bind)
         self.ui.send.clicked.connect(self.sendMessage)
-        self.ui.setKey.clicked.connect(self.setKey)
-        
+
         self.show()
 
     def bind(self):
