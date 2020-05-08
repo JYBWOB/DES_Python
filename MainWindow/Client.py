@@ -4,6 +4,7 @@ from PyQt5.QtNetwork import QTcpSocket
 from PyQt5.QtCore import *
 from DES.DesOperate import DesOperate
 from RSA.RSA import *
+import random
 import sys
 
 
@@ -15,13 +16,19 @@ class Client(QMainWindow):
 
         self.socket = QTcpSocket()
         self.des = DesOperate()
-        self.key = self.ui.key.text()
+
+        self.key = ""
+        self.generate_des_key_random()
 
         self.ui.connect.clicked.connect(self.Connect)
         self.ui.send.clicked.connect(self.sendMessage)
         self.show()
 
         self.keyReady = False
+
+    def generate_des_key_random(self):
+        for i in range(8):
+            self.key = self.key + chr(random.randint(48, 122))
 
     def Connect(self):
         self.serverhost = self.ui.host.text()
